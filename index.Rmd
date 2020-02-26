@@ -13,3 +13,7 @@ output:
 # hw4
 
 [homework4](HW-4.html)
+
+# homework 6  
+
+[homework6](homework6.html)  
