@@ -92,6 +92,27 @@ qplot(x=x_sim,color=I("black"),fill=I("goldenrod"))
 
 
 
+# regression analysis
+
+
+n <- 50 # number of observations (rows)
+var_a <- runif(n) # 50 random uniforms (independant)
+
+
+
+
+
 
 ```
+
+
+
+
+
+
+
+
+
+
+
 
