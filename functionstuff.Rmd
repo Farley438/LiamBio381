@@ -1,0 +1,15 @@
+---
+title: "Homework#5"
+author: "Liam"
+date: "2/12/2020"
+output: html_document
+---
+## Question #1
+```{r}
+n_dims <- integer(length(3:10))
+print(n_dims)
+
+
+
+```
+

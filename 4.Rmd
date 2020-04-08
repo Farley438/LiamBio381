@@ -1,0 +1,317 @@
+---
+title: "Untitled"
+author: "Liam"
+date: "2/20/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+n <- 50 # number of observations
+var_a <- runif(n) # 50 random uniforms
+var_b <- runif(n)
+var_c <- 5.5 + var_a*10
+id <- seq_len(n)
+reg_df <- data.frame(id,var_a,var_b,var_c)
+str(reg_df)
+head(reg_df)
+
+# regression model
+
+reg_model <- lm(var_c~var_a,data=reg_df)
+reg_model# sparse output
+str(reg_model)
+head(reg_model$residuals)
+
+
+# summary of model has what we usually want
+summary(reg_model)
+summary(reg_model)$coefficients
+str(summary(reg_model)
+
+
+z <- unlist(summary(reg_model))        
+    
+z
+reg_sum <- list(intercept=z$coefficients1, slope=z$coefficients2, intercept_p=z$coeffiecients7,
+                slope_p=z$coefficients8, r2=z$r.squaredd)
+
+reg_sum$intercept
+# regression plot data
+
+reg_plot <- ggplot(data = reg_df,aes(x=var_a,y=var_b)) +
+  geom_point() + stat_smooth(method = lm, se=0.95)
+print(reg_plot)
+
+###  basic anova model
+
+n_group <- 3 # number of treatment groups
+n_name <- c("control","treat1","treat2")
+n_size <- c(12,17,9)
+n_mean <- c(60,60,60)
+n_sd <- c(5,5,5)
+t_group <- rep(n_name,n_size)
+t_group
+table(t_group)
+
+id <- 1:(sum(n_size))
+res_var <- c(rnorm(n=n_size[1],mean=n_mean[1],sd=n_sd[1]),
+             rnorm(n=n_size[2],mean=n_mean[2],sd=n_sd[2]),
+             rnorm(n=n_size[3],mean=n_mean[3],sd=n_sd[3]))
+
+ano_data <- data.frame(id,t_group,res_var)
+str(ano_data)
+
+# anova model
+
+ano_model <- aov(res_var~t_group,data=ano_data)
+print(ano_model)
+Print(summary(ano_model))
+z <- summary(ano_model)
+
+str(z)
+aggregate(res_var~t_group,data=ano_data,FUN=mean)
+unlist(z)
+unlist(z)[7]
+ano_sum <- list(fval=unlist(z)[7],probF=unlist(z)[9])
+
+ano_sum
+
+### ggplot for anova data
+
+library(ggplot2)
+ano_plot <-ggplot(data=ano_data,aes(x=t_group,y=res_var,fill=t_group)) + geom_boxplot()
+
+print(ano_plot)
+ggsave(filename = "plot2.pdf",plot=ano_plot,device="pdf")
+
+
+###   data frame for logistic regression
+# discrete y variable and continous x variable
+
+
+x_var <- sort(rgamma(n=200,shape = 5,scale = 5))
+head(x_var)
+
+y_var <- sample(rep(c(0,1),each=100),prob = seq_len(200))
+head(y_var)
+l_reg_data <- data.frame(x_var,y_var)
+
+#### logistic regression model
+
+l_reg_model <- glm(y_var~x_var,data=l_reg_data,family = binomial(link = logit))
+summary(l_reg_model)
+
+summary(l_reg_model)$coefficients
+
+##  basic ggplot of logistic regression data
+
+
+lreg_plot <- ggplot(data = l_reg_data,aes(x=x_var,y=y_var)) + geom_point() + stat_smooth(method = glm,
+                                                                                         method.args = list(family=binomial))
+print(lreg_plot)
+
+## Contingency analysis
+
+# both x and y data variables are discrete(= counts)
+# Interger counts differetn groups
+
+
+vec_1 <- c(50,66,22)
+vec_2 <- c(120,22,30)
+
+data_matrix <- rbind(vec_1,vec_2)
+rownames(data_matrix) <- c("cold","warm")
+colnames(data_matrix) <- c("aphaenogaster","campontus","cremotoser")
+str(data_matrix)
+data_matrix
+
+# simple association test
+
+Print(chisq.test(data_matrix))
+
+# base R graphics
+library(tidyverse)
+
+mosaicplot(x=data_matrix,col=c("goldenrod","grey","black"),shade=FALSE)
+barplot(height = datamatrix,beside = TRUE,col("cornflowerblue","tomato"))
+
+d_ frame <- as.data.frame(data_matrix)
+d_frame <- cbind(d_frame,list(Treatment=c("clod","warm")))
+d_frame <- gather(d_frame,key=Species,aphaenogaster:cremotoser,value=counts)
+
+p <- ggplot(data = d_frame,aes(x=species,y=Counts,fill=treatment))+
+  geom_bar(stat = "identity",position = "dodge",color=I("black")) + scale_fill_manual(values=c("cornflowerblue","coral"))
+print(ggplot())
+
+
+
+#### Everything in R is a function
+
+sum(3,2) # prefix function
+3 + 2 # an operator, but it is a function
+`+`(3,2)
+y <- 3
+print(y)
+
+`<-` (yy,3)
+print(yy)
+# see contents of a function, print it
+
+print(read.table)
+sd  # print function
+sd(3,2)
+
+## The anatomy of a user-defined function
+
+function_name <- function(par_x=default_x,par_y=default_y,par_z=default_z) {}
+
+# function body
+# lines of r code and annotation
+# may call create function
+# creat local variables 
+
+return(z) # single element
+function_name
+function_name(par_x = my_matrix,par_y = "order",par_z = 1:10)
+### use prominant hsh fencing around your code
+### give a header with function name and brief one line description of input and output
+### names inside functions can be short and simple, usually no more than one screen
+## If too complex, break into multiple functions
+## Provide default values for inpput paprameters
+## make those values from random number generators
+
+##########################
+
+#######################################################################
+## FUNCTIOn: hardy_weinberg2
+# input an allele frequency p (0,1)
+# output p and the frequency of genotypes AA Ab BB
+
+############################
+
+hardy_weinberg2 <- function(p=runif(1)) {
+  if(p > 1.0 | p < 0.0){
+    return("function failure: p must be <= 1 and >=0")}
+  q <- 1 - p
+  f_AA <- p^2
+  f_AB <- 2*p*q
+  f_BB <- q^2
+  vec_out <- list(p=p,f_AA=f_AA,
+                  f_AB=f_AB, f_BB=f_BB)
+  return(vec_out)
+  }
+
+##########################################
+
+hardy_weinberg2()
+hardy_weinberg(1.1)
+hardy_weinberg2(1.1)
+
+z <- hardy_weinberg2(1.1)
+z
+
+# stop function: p must be <=
+
+hardy_weinberg3 <- function(p=runif(1)) {
+  if(p > 1.0 | p < 0.0){
+    stop("function failure: p must be <= 1 and >=0")}
+  q <- 1 - p
+  f_AA <- p^2
+  f_AB <- 2*p*q
+  f_BB <- q^2
+  vec_out <- list(p=p,f_AA=f_AA,
+                  f_AB=f_AB, f_BB=f_BB)
+  return(vec_out)
+  }
+####################
+
+hardy_weinberg3(1.1)
+z <- hardy_weinberg3(1.1)
+z
+
+
+################################################
+# global variables are visible in all parts of the code, declared in the main body of the program
+# local variable only visible within the function: or passed to it through input parameters
+# function can see variables in global environment 
+
+my_func <- function(a=3, b=4){z <- a + b return(z){
+
+my_func_bad <- function(a=3)
+{ z <- a + b, 
+  return(z)}
+
+my_func_bad()
+b <-100
+my_func_bad()
+
+my_func_ok <- function(a=3){
+  bb <- 100
+z <- a + bb 
+return(z)}
+
+##############################################
+
+# Function fit_linear
+# fit simpe regression line
+# inputs: numeric vectors of predicator (x) and response (y)
+# output: slope and p-value
+
+
+##_____________
+
+fit_linear <- function(x=runif(20),y=runif(20)){
+  my_mod <- lm(y~x)
+  my_out <- list(slope=summary(my_mod)$coefficients[2,1],
+                 p_val=summary(my_mod)$coefficient[2,4])
+  plot(x=x,y=y)
+  return(my_out)
+}
+#-------------------
+fit_linear()
+
+# create more complex 
+
+
+fit_linear2 <- function(p=NULL)if(is.null(p)){
+  p <- list(x=runif(20), y=runif(20))
+}
+  my_mod <- lm(p$y~p$x)
+  my_out <- list(slope=summary(my_mod)$coefficients[2,1],
+                 p_val=summary(my_mod)$coefficient[2,4])
+  plot(x=p$x,y=p$y)
+  return(my_out)
+
+  my_pars <- list(x=1:10, y=runif(10))
+  fit_linear2(p=my_pars)
+
+# use do call function to pass a list of parameters to a function
+  
+  z <- c(runif(99),NA)
+nean(z)
+mean(x=z, na.rm = TRUE)
+mean(x=z, na.rm = TRUE, trim = 0.05)
+
+my_list= list(x=z,na.rm=TRUE,trim=0.05)
+mean(my_list)
+do.call(mean,my_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+

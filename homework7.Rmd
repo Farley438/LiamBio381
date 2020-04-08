@@ -1,0 +1,212 @@
+---
+title: "Homework7"
+author: "Liam"
+date: "4/5/2020"
+output: html_document
+---
+
+# Question 1,2,3
+# To start simply, assume that the data in each of your treatment groups follow a normal distribution. Specify # the sample sizes, means, and variances for each group that would be reasonable if your hypothesis were true.
+# Using the methods we have covered in class, write code to create a random data set that has these attributes. # Organize these data into a data frame or tibble with the appropriate structure.
+# groups are "celo" which is dead branches with biocontrol, "celohwa" is just dead branches with hwa and no biocontrol and "control" is neither. Hypothesis is that dead branches between two treatments will be higher in celohwa treatment.
+```{r}
+library(ggplot2)
+celo1 <- 3
+cName <- c("Control","celo", "celohwa") # variable names from my data
+cSize <- c(12,20,34) 
+cMean <- c(0,7.8,11)
+cSD <- c(0,3.2,8) 
+
+ID <- 1:(sum(cSize)) 
+resVar <- c(rnorm(n=cSize[1],mean=cMean[1],sd=cSD[1]),
+            rnorm(n=cSize[2],mean=cMean[2],sd=cSD[2]),
+            rnorm(n=cSize[3],mean=cMean[3],sd=cSD[3]))
+CeloGroup <- rep(cName,cSize)
+ANOdata <- data.frame(ID,CeloGroup,resVar)
+str(ANOdata)
+
+ANOmodel <- aov(resVar~CeloGroup,data=ANOdata)
+print(ANOmodel)
+print(summary(ANOmodel))
+c <- summary(ANOmodel)
+str(c)
+aggregate(resVar~CeloGroup,data=ANOdata,FUN=mean)
+unlist(c)
+unlist(c)[7]
+ANOsum <- list(Fval=unlist(c)[7],probF=unlist(c)[9])
+ANOsum
+
+
+```
+# Now write code to analyze the data (probably as an ANOVA or regression analysis, but possibly as a logistic
+# regression or contingency table analysis. Write code to generate a useful graph of the data.
+
+```{r}
+ANOPlot <- ggplot(data=ANOdata,aes(x=CeloGroup,y=resVar,fill=CeloGroup)) +
+           geom_boxplot()
+print(ANOPlot)
+
+
+```
+# Question 5
+```{r}
+celo2 <- 3
+cName <- c("Control","celo", "celohwa") # variable names from my data
+cSize <- c(12,40,43) 
+cMean <- c(0,7.8,11)
+cSD <- c(0,3.2,8) 
+
+ID <- 1:(sum(cSize)) 
+resVar <- c(rnorm(n=cSize[1],mean=cMean[1],sd=cSD[1]),
+            rnorm(n=cSize[2],mean=cMean[2],sd=cSD[2]),
+            rnorm(n=cSize[3],mean=cMean[3],sd=cSD[3]))
+CeloGroup <- rep(cName,cSize)
+ANOdata <- data.frame(ID,CeloGroup,resVar)
+str(ANOdata)
+
+ANOmodel <- aov(resVar~CeloGroup,data=ANOdata)
+print(ANOmodel)
+print(summary(ANOmodel))
+c <- summary(ANOmodel)
+str(c)
+aggregate(resVar~CeloGroup,data=ANOdata,FUN=mean)
+unlist(c)
+unlist(c)[7]
+ANOsum <- list(Fval=unlist(c)[7],probF=unlist(c)[9])
+ANOsum
+
+
+
+```
+```{r}
+ANOPlot <- ggplot(data=ANOdata,aes(x=CeloGroup,y=resVar,fill=CeloGroup)) +
+           geom_boxplot()
+print(ANOPlot)
+
+
+```
+```{r}
+celo3 <- 3
+cName <- c("Control","celo", "celohwa") # variable names from my data
+cSize <- c(120,52,36) # High sample size
+cMean <- c(0,7.8,11)
+cSD <- c(0,3.2,8) 
+
+ID <- 1:(sum(cSize)) 
+resVar <- c(rnorm(n=cSize[1],mean=cMean[1],sd=cSD[1]),
+            rnorm(n=cSize[2],mean=cMean[2],sd=cSD[2]),
+            rnorm(n=cSize[3],mean=cMean[3],sd=cSD[3]))
+CeloGroup <- rep(cName,cSize)
+ANOdata <- data.frame(ID,CeloGroup,resVar)
+str(ANOdata)
+
+ANOmodel <- aov(resVar~CeloGroup,data=ANOdata)
+print(ANOmodel)
+print(summary(ANOmodel))
+c <- summary(ANOmodel)
+str(c)
+aggregate(resVar~CeloGroup,data=ANOdata,FUN=mean)
+unlist(c)
+unlist(c)[7]
+ANOsum <- list(Fval=unlist(c)[7],probF=unlist(c)[9])
+ANOsum
+
+
+
+```
+```{r}
+ANOPlot <- ggplot(data=ANOdata,aes(x=CeloGroup,y=resVar,fill=CeloGroup)) +
+           geom_boxplot()
+print(ANOPlot)
+
+```
+# Question 6
+```{r}
+celo5 <- 3
+cName <- c("Control","celo", "celohwa") # variable names from my data
+cSize <- c(12,20,34) 
+cMean <- c(0,5,9) # very low means
+cSD <- c(0,3.2,8) 
+
+ID <- 1:(sum(cSize)) 
+resVar <- c(rnorm(n=cSize[1],mean=cMean[1],sd=cSD[1]),
+            rnorm(n=cSize[2],mean=cMean[2],sd=cSD[2]),
+            rnorm(n=cSize[3],mean=cMean[3],sd=cSD[3]))
+CeloGroup <- rep(cName,cSize)
+ANOdata <- data.frame(ID,CeloGroup,resVar)
+str(ANOdata)
+
+ANOmodel <- aov(resVar~CeloGroup,data=ANOdata)
+print(ANOmodel)
+print(summary(ANOmodel))
+c <- summary(ANOmodel)
+str(c)
+aggregate(resVar~CeloGroup,data=ANOdata,FUN=mean)
+unlist(c)
+unlist(c)[7]
+ANOsum <- list(Fval=unlist(c)[7],probF=unlist(c)[9])
+ANOsum
+
+
+
+```
+# Larger means than before`
+``{r}
+```{r}
+celo1 <- 3
+cName <- c("Control","celo", "celohwa") # variable names from my data
+cSize <- c(12,20,34) 
+cMean <- c(0,10,15)
+cSD <- c(0,3.2,8) 
+
+ID <- 1:(sum(cSize)) 
+resVar <- c(rnorm(n=cSize[1],mean=cMean[1],sd=cSD[1]),
+            rnorm(n=cSize[2],mean=cMean[2],sd=cSD[2]),
+            rnorm(n=cSize[3],mean=cMean[3],sd=cSD[3]))
+CeloGroup <- rep(cName,cSize)
+ANOdata <- data.frame(ID,CeloGroup,resVar)
+str(ANOdata)
+
+ANOmodel <- aov(resVar~CeloGroup,data=ANOdata)
+print(ANOmodel)
+print(summary(ANOmodel))
+c <- summary(ANOmodel)
+str(c)
+aggregate(resVar~CeloGroup,data=ANOdata,FUN=mean)
+unlist(c)
+unlist(c)[7]
+ANOsum <- list(Fval=unlist(c)[7],probF=unlist(c)[9])
+ANOsum
+```
+# Question 7
+
+```{r}
+celo6 <- 3
+cName <- c("Control","celo", "celohwa") # variable names from my data
+cSize <- c(4,5,15) # lowered the sample size down until pvalue is not significant
+cMean <- c(0,10,15)
+cSD <- c(0,3.2,8) 
+
+ID <- 1:(sum(cSize)) 
+resVar <- c(rnorm(n=cSize[1],mean=cMean[1],sd=cSD[1]),
+            rnorm(n=cSize[2],mean=cMean[2],sd=cSD[2]),
+            rnorm(n=cSize[3],mean=cMean[3],sd=cSD[3]))
+CeloGroup <- rep(cName,cSize)
+ANOdata <- data.frame(ID,CeloGroup,resVar)
+str(ANOdata)
+
+ANOmodel <- aov(resVar~CeloGroup,data=ANOdata)
+print(ANOmodel)
+print(summary(ANOmodel))
+c <- summary(ANOmodel)
+str(c)
+aggregate(resVar~CeloGroup,data=ANOdata,FUN=mean)
+unlist(c)
+unlist(c)[7]
+ANOsum <- list(Fval=unlist(c)[7],probF=unlist(c)[9])
+ANOsum
+```
+
+
+
+

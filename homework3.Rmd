@@ -1,0 +1,68 @@
+---
+title: "homework3"
+author: "Liam"
+date: "3/28/2020"
+output: html_document
+---
+
+## L_Farley H_3
+
+# Question #1
+# use: Find function:  \t+ and then Replace with: \,
+First String,Second,1.22,3.4
+Second,More Text,1.555555,2.2220
+Third,x,3,124
+
+## Question # 2
+# use Find function: (w+), (\w+), (.*) and then Replace with: \2 \1 \(\3\)
+# 
+Bryan Ballif (University of Vermont)
+Aaron Ellison (Harvard Forest)
+Sydne Record (Bryn Mawr)
+
+### Question # 3
+# used Find function: mp3(space) and then Replace: \n but this left off mp3 at end of each line
+# so then added in Replace function: mp3 \n
+
+0001 Georgia Horseshoe.mp3 
+0002 Billy In The Lowground.mp3 
+0003 Cherokee Shuffle.mp3 
+0004 Walking Cane.mp3
+
+#### Question 4
+# Find function: (/d+) (.+)(.mp3)
+# Replace: \2-\1\3
+
+Georgia Horseshoe_0001.mp3
+Billy In The Lowground_0002.mp3
+Cherokee Shuffle_0003.mp3
+Walking Cane_0004.mp3
+
+##### Question 5
+# Find: (\w)(\w+),(\w+),(.+),(.+)
+# Replace: \1_\3,\5
+
+C_pennsylvanicus,44
+C_herculeanus,3
+M_punctiventris,4
+L_neoniger,55
+
+
+
+#### Question 6
+# Find: (\w)(\w+),(\w{4})(\w+),(.+),(.+)
+# Replace: \1_\3,\6
+
+C_penn,44
+C_herc,3
+M_punc,4
+L_neon,55
+
+#### Question 7
+# Find: (\w{3})(\w+),(\w{3})(\w+),(.+),(.+)
+# Replace: \1\3,\6,\5
+
+Campen,44,10.2
+Camher,3,10.5
+Myrpun,4,12.2
+Lasneo,55,3.3

@@ -1,0 +1,97 @@
+---
+title: "Homework#8"
+author: "Liam"
+date: "3/4/2020"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+
+data("iris")
+
+# Question 1
+glimpse(iris)
+# observations: 150
+# variables # 5
+
+# Question 2
+
+# filter(iris, Species == c("virginica", "versicolor"))
+                 
+# select(iris, Sepal.Length > 6, Sepal.Width > 2.5)
+
+iris1 <- filter(iris, Species == c("virginica", "versicolor"), Sepal.Length > 6.0, Sepal.Width > 2.5)
+glimpse(iris1)
+# observations: 28
+# variables: 5
+
+# Question 3
+
+iris2 <- select(iris1, Species, Sepal.Length, Sepal.Width)
+glimpse(iris2)
+ # observations: 28
+# Variables: 3
+
+# Question 4
+
+iris3 <- arrange(iris2, by=desc(Sepal.Length))
+head(iris3)
+
+
+```
+```{r}
+
+# Question 5
+
+iris4 <- mutate(iris3, Sepal.Area = Sepal.Length*Sepal.Width)
+glimpse(iris4)
+# Observations: 28
+# Variables: 4
+
+# Question 6
+
+iris5 <- summarize(iris4, meanSepal.Length = mean(Sepal.Length, na.rm = T), meanSepal.Width = mean(Sepal.Width, na.rm = T), Totalnumber = n())
+print(iris5)
+
+
+
+```
+
+```{r}
+# Question 7
+
+iris_species <- group_by(iris4, Species)
+
+iris6 <- summarize(iris_species, meanSepal.Length = mean(Sepal.Length, na.rm = T), meanSepal.Width = mean(Sepal.Width, na.rm = T), Totalnumber = n())
+print(iris6)
+
+
+
+```
+
+```{r}
+iris %>%
+  
+ filter(Species == c("virginica", "versicolor"), Sepal.Length > 6.0, Sepal.Width > 2.5) %>%
+  select(Species, Sepal.Length, Sepal.Width)%>%
+  arrange(by=desc(Sepal.Length))%>%
+  mutate(Sepal.Area = Sepal.Length*Sepal.Width)%>%
+  group_by(Species)%>%
+  summarize(meanSepal.Length = mean(Sepal.Length, na.rm = T), meanSepal.Width = mean(Sepal.Width, na.rm = T), Totalnumber = n())
+  
+  
+  
+  
+
+  
+ 
+
+
+
+```
+
+
+
+
+

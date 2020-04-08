@@ -1,0 +1,119 @@
+---
+title: "Homework5"
+author: "Liam"
+date: "3/28/2020"
+output: html_document
+---
+
+### Question 1
+
+```{r}
+n_dims <- runif(1, min = 3, max = 10)
+n_dims1 <- seq(from = 1, to = n_dims^2)
+print(n_dims1)
+
+
+```
+```{r}
+# Use the sample function to randomly reshuffle these values.
+sample(n_dims1)
+```
+```{r}
+# create a square matrix with these elements.
+library(ggplot2)
+m <- matrix(data = n_dims1, nrow = 6, ncol = 6)
+print(m)
+
+```
+```{r}
+# find a function in r to transpose the matrix.
+m2 <- t(m)
+print(m2)
+```
+```{r}
+# calculate the sum and the mean of the elements in the first row and the last row.
+m3 <- m2[-c(2,3,4,5),] 
+print(m3)
+```
+```{r}
+sum(m3)
+```
+```{r}
+mean(m3)
+```
+```{r}
+# read about the eigen() function and use it on your matrix
+
+m4 <- eigen(m2)
+print(m4)
+
+typeof(m4)
+```
+```{r}
+n_dims <- runif(1, min = 3, max = 10)
+n_dims1 <- seq(from = 1, to = n_dims^2)
+print(n_dims1)
+n_dims2 <- sample(n_dims1)
+library(ggplot2)
+m <- matrix(data = n_dims1, nrow = 6, ncol = 6)
+print(m)
+
+
+```
+
+
+### Question 2
+
+```{r}
+my_matrix <- matrix(data = 4:4, nrow = 4, ncol = 4, byrow = TRUE)
+print(my_matrix)
+vec <- runif(100, min = 1, max = 100)
+my_logical <- vec <50
+my_letters <- sample(letters)
+sample(my_letters)
+my_list <- list(my_matrix, my_logical, my_letters)
+str(my_list)
+print(my_list)
+
+```
+```{r}
+
+my_list2 <- list(my_matrix[2,2], my_logical[2], my_letters[2])
+print(my_list2)
+```
+```{r}
+typeof(my_matrix)
+
+```
+```{r}
+typeof(my_logical)
+```
+```{r}
+typeof(my_letters)
+```
+```{r}
+my_list3 <- c(my_matrix,my_logical,my_letters)
+typeof(my_list3)
+```
+### Question 3
+```{r}
+my_unis <- runif(26, min = 0, max = 10)
+My_letters <- sample(LETTERS)
+dframe <- data.frame(my_unis,My_letters, stringsAsFactors = FALSE)
+print(dframe)
+
+dframe[sample(my_unis, 4),1] <- NA
+print(dframe)
+which(!complete.cases(dframe))
+dframe <- dframe[order(dframe$My_letters),]
+print(dframe)
+
+```
+```{r}
+
+mean(my_unis)
+
+```
+
+
+
