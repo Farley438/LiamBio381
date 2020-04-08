@@ -10,6 +10,11 @@ output:
 
 [link](this is an H1.html) 
 
+# homework 3  
+
+[homework3](homework3.html)  
+
+
 # hw4
 
 [homework4](HW-4.html)
@@ -20,4 +25,14 @@ output:
 # homework 6  
 
 [homework6](homework6.html)  
+
+# Homework 7  
+
+[homework7](homework7.html)  
+
+# Homework 8  
+
+[homework8](homework8.html)  
+
+
 
