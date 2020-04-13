@@ -1,0 +1,60 @@
+---
+title: "Homework9"
+author: "Liam"
+date: "4/9/2020"
+output: html_document
+---
+### Question 1
+
+```{r}
+library(ggplot2)
+# source files--------------------
+source("MyFunctions.R")
+
+# global variables ---------------------------
+
+
+celo_file <- "Celo.csv"
+x_col <- 5 # HWA ovisacs count
+y_col <- 12 # SF larvae count
+##################################
+
+temp1 <- GetData(file_name = celo_file)
+
+x <- temp1[,x_col] # extract predicator variable
+y <- temp1[,y_col] # extract response variable
+
+temp2 <- FitRegressionModel(xVar = x, yVar = y)
+temp3 <- SummarizeOutput(z = temp2)
+GraphResults(xVar = x, yVar = y)
+print(temp3)
+print(temp2)
+```
+### Question 2
+```{r}
+library(ggplot2)
+# source files--------------------
+source("MyFunctions.R")
+
+# global variables ---------------------------
+
+
+Dupont_file <- "Dupont.csv"
+x_col <- 5 # HWA ovisacs count
+y_col <- 12 # SF larvae count
+##################################
+
+temp1 <- GetData2(file_name = Dupont_file)
+
+x <- temp1[,x_col] # extract predicator variable
+y <- temp1[,y_col] # extract response variable
+
+temp2 <- FitRegressionModel(xVar = x, yVar = y)
+temp3 <- SummarizeOutput(z = temp2)
+GraphResults2(xVar = x, yVar = y)
+print(temp3)
+print(temp2)
+
+
+```
+

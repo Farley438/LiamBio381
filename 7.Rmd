@@ -1,0 +1,143 @@
+---
+title: "dplyr"
+author: "Liam"
+date: "3/4/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+### Manipulating data using dplyr
+
+
+library(dplyr)
+## what is dplyr?
+
+# newish package:  provide a set of tools for manipulating data
+# part of tidyverse:  collection of packages that share same philosphy, grammar and data structure
+# specifically written to be fast!
+# individual functions for the most commom operations
+# easier to figure out what you want to do with your data
+
+## core verbs
+
+# filter() filters out data, rows
+# arrange()
+# select() columns
+# summarize() and group_by()
+# mutate()
+
+data("starwars")
+class(starwars)
+# what is a tibble?
+# keeps great aspects of df, drops frustrating ones, changing variable names changing input names
+
+glimpse(starwars)
+head(starwars)
+## clean up data
+# complete.cases not part of dplyr
+
+starwarsClean <- starwars[complete.cases(starwars[,1:10]),]
+is.na(starwarsClean[,1])
+anyNA(starwarsClean)
+anyNA(starwars)
+glimpse(starwarsClean)
+head(starwarsClean)
+
+# filter(): pick/subset observations by their values
+### uses ., <==, ,<
+## logical operations: & | !
+#### filter automatically excludes NAs
+
+filter(starwarsClean, gender == "male", height < 180,
+       height > 100) ## can use commas, multiple conditions for some variables
+filter(starwarsClean, eye_color %in% c("blue", "brown"))
+#### %in% similiar to ==
+
+### arrange() reorders rows
+
+arrange(starwarsClean, by=height) # default is descending order
+arrange(starwarsClean, by=desc(height)) # desc changes order
+
+arrange(starwarsClean, height, desc(mass))
+# add additional arguement to break ties in preceding column
+
+starwars1 <- arrange(starwars, height)
+tail(starwars1
+    ) # missing values are at the end
+
+# select(): choose variables by there names 
+starwarsClean[1:10,2] # base r - selecting second variable
+
+select(starwarsClean, 1:5) #use numbers
+select(starwarsClean, name:species)
+select(starwarsClean, name:height) #can use variable names
+
+select(starwarsClean, -(films:starships))
+
+## rearrange columns
+select(starwarsClean, name, gender, species, everything()) # everything() helper function useful if you want to move a couple variables to the beginning
+
+select(starwarsClean, contains("color"))
+# other helpers: ends_with, starts_with, matches (reg ex), num_range
+
+### rename columns
+
+select(starwars, haircolor = hair_color,films)
+
+#### rename function
+
+rename(starwarsClean, haircolor=hair_color)
+
+##### mutate() creates new variables with functions of existing variables
+
+mutate(starwarsClean, ratio = height/mass) # we can use arithmetic operators
+
+starwars_lbs <- mutate(starwarsClean, mass_lbs = mass*2.2) #convert kg to lbs
+select(starwars_lbs, 1:3, mass_lbs, everything()) # bring mass_lbs to front
+
+#transmute - just keeps new variable
+transmute(starwarsClean, mass_lbs = mass*2.2)
+
+### summarize and group_by: collapses values down to a single summary
+
+summarize(starwarsClean, meanheight = mean (height))
+
+## working with NAs
+summarize(starwars, meanHeight = mean(height, na.rm = T), Totalnumber = n())
+# helper functions calculates sample size
+
+summarize(starwarsClean, meanHeight = mean(height, na.rm = T), Totalnumber = n())
+
+starwarsGenders <- group_by(starwars, gender)
+head(starwarsGenders)
+
+summarize(starwarsGenders, meanHeight=mean(height, na.rm = T), number=n())
+
+## piping
+### used to emphise a sequence of actions
+### passes an intermediate result onto the next function (takes output of the next statement and makes it the input of the next
+
+### avoid if you want maeningful intermediate results or if you want to manipulate more than one object at a time
+## formting: have a space before the pipe, followed by a new line
+## %>%
+
+starwarsClean %>%
+  group_by(gender) %>%
+  summarize(meanHeight = mean(height),number= n())
+
+
+starwarheights <- starwarsClean %>%
+  group_by(gender) %>%
+  summarize(meanHeight = mean(height),number= n())
+
+
+
+
+
+
+
+
+```
+
