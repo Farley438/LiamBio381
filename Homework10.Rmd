@@ -1,0 +1,51 @@
+---
+title: "Homework10"
+author: "Liam"
+date: "4/14/2020"
+output: html_document
+---
+# Question 1
+
+```{r}
+
+source("MyFunctions.R")
+myzero <- rpois(15,1)
+zerocounter <- zeroloop(z=myzero)
+print(zerocounter)    
+
+# Question 2
+myzero[myzero == 0]
+length(myzero[myzero == 0])
+
+
+# Question 3
+element <- rowxcol(x)
+
+
+## Question 4
+Dupont_file <- "Dupont.csv"
+x_col <- 5 # HWA ovisacs count
+y_col <- 12 # SF larvae count
+##################################
+nSim <- 1000
+Xsim <- rep(NA,nSim) # vector of simulated slopes
+d <- readData(file_name = Dupont_file)
+xVar <- getMetric(d)
+
+for (i in seq_len(nSim)) {
+Xsim[i] <- getMetric(shuffleData())
+}
+
+slopes <- list(xVar,Xsim)
+getPVal(slopes)
+summary(getPVal(slopes))
+
+```
+```{r}
+## Question 5
+dz <- readData(file_name = Dupont_file)
+regModel <- lm(yVar~xVar,data=my_df)
+summary(regModel)
+
+```
+
