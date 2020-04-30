@@ -19,6 +19,7 @@ output:
 [homework4](HW-4.html)
 
 # Homework 5  
+
 [homework5](homework5.html)  
 
 # homework 6  
@@ -35,7 +36,7 @@ output:
 
 # Homework 9  
 
-[homework9](homework9.html)
+[homework9](Homework9.html)
 
 # Homework 10
 

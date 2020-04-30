@@ -6,7 +6,7 @@ output: html_document
 ---
 ### Question 1
 
-```{r}
+```{r warning=FALSE,message=FALSE}
 library(ggplot2)
 # source files--------------------
 source("MyFunctions.R")

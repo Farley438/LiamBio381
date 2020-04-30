@@ -11,7 +11,7 @@ FitRegressionModel <- function(xVar=runif(10),yVar=runif(10)) {
   regModel <- lm(yVar~xVar,data=dataFrame)
   return(summary(regModel))
 }
-FitRegressionModel()
+# FitRegressionModel()
 
 ##################################################
 # FUNCTION: SummarizeOutput
@@ -25,7 +25,7 @@ SummarizeOutput <- function(z=NULL) {
   }  
   return(z$residuals)
 }
-SummarizeOutput()
+# SummarizeOutput()
 
 ##################################################
 # FUNCTION: GraphResults
@@ -46,8 +46,8 @@ GraphResults <- function(xVar=runif(10), yVar=runif(10)) {
   # abline(regModel)
   message("Message: Regression graph created")
 }
-GraphResults()
-str(GraphResults())
+#GraphResults()
+
 
 ##################################################
 # FUNCTION: GetData
@@ -72,7 +72,7 @@ GetData <- function(file_name = NULL) {
 }
 
 
-GetData()
+# GetData()
 
 ####################################################
 MyRData <- read.csv("Celo.csv", header = TRUE)
@@ -103,7 +103,7 @@ GetData2 <- function(file_name = NULL) {
 }
 
 
-GetData()
+# GetData()
 
 ##################################################
 # FUNCTION: GraphResults2
@@ -124,8 +124,8 @@ GraphResults2 <- function(xVar=runif(7), yVar=runif(7)) {
   # abline(regModel)
   message("Message: Regression graph created")
 }
-GraphResults2()
-str(GraphResults2())
+# GraphResults2()
+# str(GraphResults2())
 
 ##################################################
 # FUNCTION: zeroloop
@@ -141,8 +141,8 @@ zeroloop <- function(z) {
      }
   return(counter)
 }
-myz <- rpois(10,1)
-zeroloop(z=myz)
+# myz <- rpois(10,1)
+
 
 ##################################################
 # FUNCTION: rowxcol
@@ -189,7 +189,7 @@ readData <- function(file_name = NULL) {
   }
   return(df)
 } 
-my_df <- readData()
+# my_df <- readData()
 ##################################################
 # function: getMetric
 # calculate metric for randomization test
@@ -204,7 +204,7 @@ getMetric <- function(z = my_df) {
   slope <- .
   return(slope)
 }
-getMetric()
+# getMetric()
                   
                                      
  
@@ -220,7 +220,7 @@ shuffleData <- function(z = my_df) {
   z[,3] <- sample(z[,3]) # use sample function with defaults to reshuffle column
   return(z)
 }
-shuffleData()
+# shuffleData()
     
                    
   
@@ -239,7 +239,7 @@ getPVal <- function(z = NULL) {
                       pUpper <- mean(z[[2]]>=z[[1]])
   return(c(pL=pLower,pU=pUpper))
 }
-getPVal()  
+# getPVal()  
 ##################################################
 # function: plotRanTest
 # create ggplot of histogram of simulated values
@@ -255,7 +255,7 @@ plotRanTest <- function(z =NULL) {
     geom_vline(aes(xintercept=z[[1]],col="blue")) 
   
 }
-plotRanTest()
+# plotRanTest()
 
 
 

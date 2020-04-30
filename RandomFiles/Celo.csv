@@ -1,50 +1,50 @@
 Site,Tag No.,# of dead Sf,Sf released,HWA ovisacs field count,Release date:,Release info,Treatment,Collection Interval (wks),Collection Date,Process Date,SF Larvae,SF Puparia,SF Adults,Progrediens Ovisacs (Lab),Sistens Nymphs (Lab),Leucopis Species
-"NC,Celo",1,28,32,280,5/23/2019,2 vials,Flies,2,6/4/2019,6/6/2019,32,0,4,239,,agrenticolis
-"NC,Celo",2,5,27,142,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,0,0,0,185,,agrenticolis
-"NC,Celo",3,21,32,125,5/23/2019,2 vials,Flies,2,6/4/2019,6/6/2019,14,0,1,162,,agrenticolis
-"NC,Celo",4,30,32,230,5/23/2019,2 vials,Flies,2,6/4/2019,6/6/2019,3,0,0,277,,agrenticolis
-"NC,Celo",5,3,29,113,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,15,0,0,101,,agrenticolis
-"NC,Celo",11,0,32,176,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,2,0,1,245,,agrenticolis
-"NC,Celo",12,3,29,175,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,0,0,0,87,,agrenticolis
-"NC,Celo",13,4,28,102,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,13,0,0,122,,agrenticolis
-"NC,Celo",19,2,30,136,5/24/2019,1 vial,Flies,2,6/4/2019,6/6/2019,2,0,0,159,,agrenticolis
-"NC,Celo",24,2,30,151,5/24/2019,1 vial,Flies,2,6/4/2019,6/6/2019,14,0,1,80,,agrenticolis
-"NC,Celo",42,Control,Control,280,5/29/2019,,Control,2,6/4/2019,6/6/2019,0,0,0,271,,
-"NC,Celo",43,Control,Control,126,5/29/2019,,Control,2,6/4/2019,6/6/2019,0,0,0,105,,
-"NC,Celo",46,Control,Control,175,5/29/2019,,Control,2,6/4/2019,6/6/2019,0,0,0,186,,
-"NC,Celo",6,18,32,429,5/23/2019,2 vials,Flies,6,7/1/2019,7/3/2019,0,8,12,29,,agrenticolis
-"NC,Celo",9,4,28,359,5/29/2019,1 vial,Flies,6,7/1/2019,7/3/2019,0,0,7,95,,agrenticolis
-"NC,Celo",14,4,28,121,5/23/2019,1 vial,Flies,6,7/1/2019,7/3/2019,1,1,10,48,,agrenticolis
-"NC,Celo",15,0,32,85,5/23/2019,2 vials,Flies,6,7/1/2019,7/3/2019,0,4,2,11,,agrenticolis
-"NC,Celo",16,3,29,197,5/24/2019,1 vial,Flies,6,7/1/2019,7/3/2019,1,5,3,13,,agrenticolis
-"NC,Celo",17,0,32,86,5/24/2019,2 vials,Flies,6,7/1/2019,7/3/2019,0,5,5,3,,agrenticolis
-"NC,Celo",20,0,32,190,5/29/2019,1 vial,Flies,6,7/1/2019,7/3/2019,0,0,1,59,,agrenticolis
-"NC,Celo",21,3,29,166,5/29/2019,1 vial,Flies,6,7/1/2019,7/3/2019,0,0,0,95,,agrenticolis
-"NC,Celo",22,3,29,203,5/24/2019,1 vial,Flies,6,7/1/2019,7/3/2019,1,9,18,18,,agrenticolis
-"NC,Celo",47,Control,Control,288,5/29/2019,,Control,6,7/1/2019,7/3/2019,0,0,0,203,,
-"NC,Celo",48,Control,Control,100,5/29/2019,,Control,6,7/1/2019,7/3/2019,0,0,0,47,,
-"NC,Celo",49,Control,Control,124,5/29/2019,,Control,6,7/1/2019,7/3/2019,0,0,0,25,,
-"NC,Celo",7,0,32,227,5/24/2019,2 vials,Flies,8,7/17/2019,7/19/2019,0,0,0,82,29,agrenticolis
-"NC,Celo",8,0,30,117,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,1,1,8,41,agrenticolis
-"NC,Celo",10,6,26,180,5/29/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,1,0,95,83,agrenticolis
-"NC,Celo",18,5,27,224,5/29/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,0,0,75,65,agrenticolis
-"NC,Celo",23,1,31,95,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,1,0,10,4,agrenticolis
-"NC,Celo",28,0,32,326,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,0,0,21,56,agrenticolis
-"NC,Celo",29,1,31,100,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,4,0,4,45,agrenticolis
-"NC,Celo",32,5,27,265,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,3,0,0,72,agrenticolis
-"NC,Celo",38,26,38,321,5/29/2019,2 vials,Flies,8,7/17/2019,7/19/2019,0,0,1,32,62,agrenticolis
-"NC,Celo",41,Control,Control,73,5/29/2019,,Control,8,7/17/2019,7/19/2019,0,0,0,83,61,
-"NC,Celo",44,Control,Control,234,5/29/2019,,Control,8,7/17/2019,7/19/2019,0,0,0,225,124,
-"NC,Celo",45,Control,Control,174,5/29/2019,,Control,8,7/17/2019,7/19/2019,0,0,0,178,65,
-"NC,Celo",25,23,41,118,5/29/2019,2 vials,Flies,12,8/14/2019,8/16/2019,0,0,0,31,32,agrenticolis
-"NC,Celo",30,6,26,193,5/29/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,2,0,5,39,agrenticolis
-"NC,Celo",31,23,41,179,5/29/2019,2 vials,Flies,12,8/14/2019,8/16/2019,0,0,0,28,32,agrenticolis
-"NC,Celo",33,3,29,257,5/29/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,6,77,agrenticolis
-"NC,Celo",34,0,32,140,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,1,0,1,43,agrenticolis
-"NC,Celo",35,1,31,183,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,0,13,agrenticolis
-"NC,Celo",36,2,30,304,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,4,32,agrenticolis
-"NC,Celo",37,5,27,269,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,9,29,agrenticolis
-"NC,Celo",39,4,28,183,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,0,17,agrenticolis
-"NC,Celo",26,Control,Control,123,5/24/2019,,Control,12,8/14/2019,8/16/2019,0,0,0,8,11,
-"NC,Celo",27,Control,Control,131,5/24/2019,,Control,12,8/14/2019,8/16/2019,0,0,0,2,12,
-"NC,Celo",40,Control,Control,91,5/24/2019,,Control,12,8/14/2019,8/16/2019,0,0,0,8,3,
+NC_Celo,1,28,32,280,5/23/2019,2 vials,Flies,2,6/4/2019,6/6/2019,32,0,4,239,,agrenticolis
+NC_Celo,2,5,27,142,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,0,0,0,185,,agrenticolis
+NC_Celo,3,21,32,125,5/23/2019,2 vials,Flies,2,6/4/2019,6/6/2019,14,0,1,162,,agrenticolis
+NC_Celo,4,30,32,230,5/23/2019,2 vials,Flies,2,6/4/2019,6/6/2019,3,0,0,277,,agrenticolis
+NC_Celo,5,3,29,113,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,15,0,0,101,,agrenticolis
+NC_Celo,11,0,32,176,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,2,0,1,245,,agrenticolis
+NC_Celo,12,3,29,175,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,0,0,0,87,,agrenticolis
+NC_Celo,13,4,28,102,5/23/2019,1 vial,Flies,2,6/4/2019,6/6/2019,13,0,0,122,,agrenticolis
+NC_Celo,19,2,30,136,5/24/2019,1 vial,Flies,2,6/4/2019,6/6/2019,2,0,0,159,,agrenticolis
+NC_Celo,24,2,30,151,5/24/2019,1 vial,Flies,2,6/4/2019,6/6/2019,14,0,1,80,,agrenticolis
+NC_Celo,42,0,0,280,5/29/2019,,0,2,6/4/2019,6/6/2019,0,0,0,271,,
+NC_Celo,43,0,0,126,5/29/2019,,0,2,6/4/2019,6/6/2019,0,0,0,105,,
+NC_Celo,46,0,0,175,5/29/2019,,0,2,6/4/2019,6/6/2019,0,0,0,186,,
+NC_Celo,6,18,32,429,5/23/2019,2 vials,Flies,6,7/1/2019,7/3/2019,0,8,12,29,,agrenticolis
+NC_Celo,9,4,28,359,5/29/2019,1 vial,Flies,6,7/1/2019,7/3/2019,0,0,7,95,,agrenticolis
+NC_Celo,14,4,28,121,5/23/2019,1 vial,Flies,6,7/1/2019,7/3/2019,1,1,10,48,,agrenticolis
+NC_Celo,15,0,32,85,5/23/2019,2 vials,Flies,6,7/1/2019,7/3/2019,0,4,2,11,,agrenticolis
+NC_Celo,16,3,29,197,5/24/2019,1 vial,Flies,6,7/1/2019,7/3/2019,1,5,3,13,,agrenticolis
+NC_Celo,17,0,32,86,5/24/2019,2 vials,Flies,6,7/1/2019,7/3/2019,0,5,5,3,,agrenticolis
+NC_Celo,20,0,32,190,5/29/2019,1 vial,Flies,6,7/1/2019,7/3/2019,0,0,1,59,,agrenticolis
+NC_Celo,21,3,29,166,5/29/2019,1 vial,Flies,6,7/1/2019,7/3/2019,0,0,0,95,,agrenticolis
+NC_Celo,22,3,29,203,5/24/2019,1 vial,Flies,6,7/1/2019,7/3/2019,1,9,18,18,,agrenticolis
+NC_Celo,47,0,0,288,5/29/2019,,0,6,7/1/2019,7/3/2019,0,0,0,203,,
+NC_Celo,48,0,0,100,5/29/2019,,0,6,7/1/2019,7/3/2019,0,0,0,47,,
+NC_Celo,49,0,0,124,5/29/2019,,0,6,7/1/2019,7/3/2019,0,0,0,25,,
+NC_Celo,7,0,32,227,5/24/2019,2 vials,Flies,8,7/17/2019,7/19/2019,0,0,0,82,29,agrenticolis
+NC_Celo,8,0,30,117,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,1,1,8,41,agrenticolis
+NC_Celo,10,6,26,180,5/29/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,1,0,95,83,agrenticolis
+NC_Celo,18,5,27,224,5/29/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,0,0,75,65,agrenticolis
+NC_Celo,23,1,31,95,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,1,0,10,4,agrenticolis
+NC_Celo,28,0,32,326,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,0,0,21,56,agrenticolis
+NC_Celo,29,1,31,100,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,4,0,4,45,agrenticolis
+NC_Celo,32,5,27,265,5/24/2019,1 vial,Flies,8,7/17/2019,7/19/2019,0,3,0,0,72,agrenticolis
+NC_Celo,38,26,38,321,5/29/2019,2 vials,Flies,8,7/17/2019,7/19/2019,0,0,1,32,62,agrenticolis
+NC_Celo,41,0,0,73,5/29/2019,,0,8,7/17/2019,7/19/2019,0,0,0,83,61,
+NC_Celo,44,0,0,234,5/29/2019,,0,8,7/17/2019,7/19/2019,0,0,0,225,124,
+NC_Celo,45,0,0,174,5/29/2019,,0,8,7/17/2019,7/19/2019,0,0,0,178,65,
+NC_Celo,25,23,41,118,5/29/2019,2 vials,Flies,12,8/14/2019,8/16/2019,0,0,0,31,32,agrenticolis
+NC_Celo,30,6,26,193,5/29/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,2,0,5,39,agrenticolis
+NC_Celo,31,23,41,179,5/29/2019,2 vials,Flies,12,8/14/2019,8/16/2019,0,0,0,28,32,agrenticolis
+NC_Celo,33,3,29,257,5/29/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,6,77,agrenticolis
+NC_Celo,34,0,32,140,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,1,0,1,43,agrenticolis
+NC_Celo,35,1,31,183,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,0,13,agrenticolis
+NC_Celo,36,2,30,304,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,4,32,agrenticolis
+NC_Celo,37,5,27,269,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,9,29,agrenticolis
+NC_Celo,39,4,28,183,5/24/2019,1 vial,Flies,12,8/14/2019,8/16/2019,0,0,0,0,17,agrenticolis
+NC_Celo,26,0,0,123,5/24/2019,,0,12,8/14/2019,8/16/2019,0,0,0,8,11,
+NC_Celo,27,0,0,131,5/24/2019,,0,12,8/14/2019,8/16/2019,0,0,0,2,12,
+NC_Celo,40,0,0,91,5/24/2019,,0,12,8/14/2019,8/16/2019,0,0,0,8,3,

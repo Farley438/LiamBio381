@@ -1,5 +1,11 @@
-# Homework 11
+---
+title: "homework#11"
+author: "Liam"
+date: "4/29/2020"
+output: html_document
+---
 
+```{r}
 library(TeachingDemos)
 char2seed("Freezing March")
 source("MyFunctions.R")
@@ -55,3 +61,10 @@ write.table(x=statsOut,
             col.names=TRUE,
             sep=",",
             append=TRUE)
+
+
+
+
+
+```
+

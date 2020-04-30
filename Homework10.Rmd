@@ -7,7 +7,6 @@ output: html_document
 # Question 1
 
 ```{r}
-
 source("MyFunctions.R")
 myzero <- rpois(15,1)
 zerocounter <- zeroloop(z=myzero)
