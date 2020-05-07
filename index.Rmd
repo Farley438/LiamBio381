@@ -44,11 +44,13 @@ output:
 
 # Homework#11
 
-[homework#11](homework#11)
+[homework#11](homework#11.html)
 
 # Homework 12
 
-[homework12](Homework12)
+[homework12](Homework12.html)
+
+
 
 
 
