@@ -42,9 +42,9 @@ output:
 
 [homework10](Homework10.html)
 
-# Homework 11
+# Homework#11
 
-[homework11](homework#11)
+[homework#11](homework#11)
 
 # Homework 12
 
