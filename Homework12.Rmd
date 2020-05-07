@@ -1,0 +1,239 @@
+---
+title: "homework12"
+author: "Liam"
+date: "5/4/2020"
+output: html_document
+---
+
+
+```{r}
+Dupont_file <- "Dupont.csv"
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+library(TeachingDemos)
+char2seed("10th Avenue Freeze-Out")
+d <- readData(file_name = Dupont_file)
+str(d)
+table(d$fl)
+head(d)
+qplot(x=d$HWA.ovisacs)
+
+
+
+
+```
+```{r}
+qplot(x=d$HWA.ovisacs,fill=I("khaki"),color=I("black"))
+```
+```{r}
+# make your own custom histogram function
+myHisto <- function(xVar,filCol="goldenrod"){
+qplot(x=xVar,color=I("black"),fill=I(filCol))}
+myHisto(d$HWA.ovisacs)
+```
+
+```{r}
+myHisto(d$HWA.ovisacs,"thistle")
+```
+```{r}
+myHisto(xVar=d$HWA.ovisacs,filCol="sienna")
+```
+
+```{r}
+qplot(x=d$HWA.ovisacs,geom="density")
+```
+```{r}
+qplot(x=d$Collection.Interval..wks.,y=d$HWA.ovisacs,geom=c("smooth","point"))
+```
+```{r}
+qplot(x=d$Collection.Interval..wks.,y=d$HWA.ovisacs,geom=c("smooth","point"),method="lm")
+```
+```{r}
+qplot(x=d$HWA.ovisacs, y=d$Collection.Interval..wks.,geom="boxplot",fill=I("green"))       
+```
+
+```{r}
+# basic barplot (long format)
+qplot(x=d$HWA.ovisacs,geom="bar",fill=I("green"))
+```
+
+```{r}
+# bar plot with specified counts or meansw
+xTreatment <- c("HWA.Ovisacs","SF Adults","SF Larvae")
+yResponse <- c(12,2.5,22.9)
+qplot(x=xTreatment,y=yResponse,geom="col",fill=I(c("red","green","blue")))
+```
+
+```{r}
+# basic curves and functions
+myVec <- seq(1,100,by=0.1)
+myFun <- function(x) sin(x) + 0.1*x
+qplot(x=myVec,y=sin(myVec),geom="line") # built in functions
+```
+```{r}
+ p1 <- ggplot(data=d, mapping=aes(x=d$Collection.Interval..wks.,y=d$Progrediens.Ovisacs..Lab.)) + 
+ geom_point(size=7,shape=21,color="black",fill="steelblue") +
+ labs(title="Ovisacs By Week",
+      subtitle="Number of Ovisacs by Weekly Collection",
+      x="Collection Interval in Wks",
+      y="HWA Ovisacs") +
+      xlim(2,12) + ylim(0,200)
+ print(p1)
+```
+```{r}
+g1 <- ggplot(data=d, mapping=aes(x=d$Collection.Interval..wks.,y=d$Progrediens.Ovisacs..Lab.)) + 
+  geom_point() + 
+  geom_smooth() +
+  labs(title="Ovisacs By Week",
+      subtitle="Number of Ovisacs by Weekly Collection",
+      x="Collection Interval in Wks",
+      y="HWA Ovisacs") +
+      xlim(2,12) + ylim(0,200)
+print(g1)
+```
+```{r}
+o <- mean(d$SF.Larvae)
+print(o)
+
+g3 <- ggplot(data=d, mapping=aes(x=d$Collection.Interval..wks.,y=d$SF.Larvae)) + 
+  geom_point() + 
+  geom_smooth() +
+  labs(title="SF Larvae By Week",
+      subtitle="Number of SF Larvae by Weekly Collection",
+      x="Collection Interval in Wks",
+      y="SF Larvae") +
+      xlim(2,12) + ylim(0,20)
+print(g3)
+```
+```{r}
+g2 <- ggplot(data=d, mapping=aes(x=d$Collection.Interval..wks.,y=d$SF.Adults)) + 
+  geom_point() + 
+  geom_smooth() +
+  labs(title="SF Adults By Week",
+      subtitle="Number of SF Adults by Weekly Collection",
+      x="Collection Interval in Wks",
+      y="SF Adults") +
+      xlim(2,12) + ylim(0,200)
+print(g2)
+```
+```{r}
+  g1 + g2 - g3 + plot_layout(ncol=1)
+```
+```{r}
+great <- g1 / (g2 | g3) +
+  plot_annotation(tag_levels = 'A')
+print(great)
+```
+
+```{r}
+
+m1 <- ggplot(data=d, mapping=(aes(x=d$HWA.ovisacs,y=d$Progrediens.Ovisacs..Lab.,color=d$SF.Larvae))) + 
+  geom_point() 
+m1 + facet_grid(.~d$Collection.Interval..wks.)
+
+```
+```{r}
+m1 <- ggplot(data=d, mapping=(aes(x=d$HWA.ovisacs,y=d$Collection.Interval..wks.,color=d$Progrediens.Ovisacs..Lab.))) + 
+  geom_point(size=2) + geom_smooth(method="lm")
+print(m1)
+```
+```{r}
+# r-statistics.co
+#Top 50 ggplot2 Visualizations - The Master List (With Full R Code)
+
+options(scipen=999)  # turn-off scientific notation like 1e+48
+library(ggplot2)
+theme_set(theme_bw())  # pre-set the bw theme.
+d <- readData(file_name = Dupont_file)
+ 
+
+# Scatterplot
+gg <- ggplot(d, aes(x=d$Collection.Interval..wks., y=d$SF.Adults)) + 
+  geom_point(aes(col=d$HWA.ovisacs, size=d$Progrediens.Ovisacs..Lab.)) + 
+  geom_smooth(method="loess", se=F) + 
+  xlim(c(2,12)) + 
+  ylim(c(0, 200)) + 
+  labs(subtitle="Ovisacs vs SF Adults", 
+       y="SF.Adults", 
+       x="Collection.Interval..wks", 
+       title="Scatterplot", 
+       caption = "Source: Dupont")
+
+plot(gg)
+```
+
+```{r}
+ggsave(plot=great, filename="MyPlot",width=5,height=3,units="in",device="pdf")
+
+ library(installr)
+installr(updateR())
+
+install.packages("remotes")
+library(remotes)
+install.packages(Rtools)
+remotes::install_github("clauswilke/colorblindr") 
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+library(colorblindr)
+library(cowplot)
+library(colorspace)
+library(wesanderson)
+library(ggsci)
+library(TeachingDemos)
+
+char2seed("Dark Star")
+table(d$HWA.ovisacs)
+p1 <- ggplot(d,aes(x=d$HWA.ovisacs)) + geom_bar(color="black",fill="cornsilk")
+print(p1)
+p1 <- ggplot(d, aes(x=d$HWA.ovisacs)) + geom_bar(color="black",fill="cornsilk")
+
+print(p1)
+```
+1
+```{r}
+p1 <- ggplot(d,aes(x=d$SF.Larvae,fill=d$Collection.Interval..wks.)) + geom_bar()
+print(p1)
+```
+```{r}
+p1 <- ggplot(d,aes(x=d$SF.Adults,fill=d$Collection.Interval..wks.)) + geom_bar()
+print(p1)
+```
+
+```{r}
+p1 <- ggplot(d,aes(x=HWA.ovisacs,fill=d$Collection.Interval..wks.)) + geom_bar(position="dodge",color="black",size=1)
+print(p1)
+
+```
+```{r}
+# basic boxplot is simple and informative
+p1 <- ggplot(d,aes(x=d$Collection.Interval..wks.,y=d$HWA.ovisacs,fill=d$Progrediens.Ovisacs..Lab.)) +
+               geom_boxplot()
+print(p1)
+```
+
+```{r}
+p1 <- ggplot(d,aes(x=d$Collection.Interval..wks.,y=d$HWA.ovisacs)) +
+               geom_boxplot(fill="purple",outlier.shape=NA) + 
+  # geom_point()
+  geom_point(position=position_jitter(width=0.1,height=0.7),color="grey60",size=2)
+
+print(p1)
+```
+
+```{r}
+p_fil <- ggplot(d,aes(x=as.factor(d$Collection.Interval..wks.),y=d$SF.Larvae))
+p_fil + geom_boxplot()
+```
+
+```{r}
+p_grad <- ggplot(d,aes(x=d$Collection.Interval..wks.,y=d$SF.Adults,col=d$Collection.Date)) + geom_point(size=3)
+plot(p_grad)
+p_grad + scale_color_gradient(low="grey", high="red")
+```
+
+```{r}
+
+```
+

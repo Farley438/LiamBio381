@@ -141,7 +141,7 @@ zeroloop <- function(z) {
      }
   return(counter)
 }
-# myz <- rpois(10,1)
+ myz <- rpois(10,1)
 
 
 ##################################################
@@ -189,7 +189,7 @@ readData <- function(file_name = NULL) {
   }
   return(df)
 } 
-# my_df <- readData()
+ my_df <- readData()
 ##################################################
 # function: getMetric
 # calculate metric for randomization test
@@ -204,7 +204,7 @@ getMetric <- function(z = my_df) {
   slope <- .
   return(slope)
 }
-# getMetric()
+ getMetric()
                   
                                      
  
@@ -220,7 +220,7 @@ shuffleData <- function(z = my_df) {
   z[,3] <- sample(z[,3]) # use sample function with defaults to reshuffle column
   return(z)
 }
-# shuffleData()
+ shuffleData()
     
                    
   
